@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekstid 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto+Slab:wght@800&family=Roboto:wght@100&display=swap');
+
+        html {
+            font-size: 22px;
+        }
+
+        body {
+            background: #ededed;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-stretch: condensed;
+        }
+
+        .rem {
+            font-size: 1.2rem;
+        }
+
+        .em {
+            font-size: 2em;
+        }
+
+        .em p {
+            font-size: 0.8em;
+        }
+
+        @counter-style cross {
+            system: cyclic;
+            symbols: "\274C";
+            suffix: " ";
+        }
+
+        @counter-style checkmark {
+            system: cyclic;
+            symbols: "\2705";
+            suffix: " ";
+        }
+
+        ol li {
+            list-style-type: checkmark;
+        }
+
+        ol {
+            text-align: left;
+        }
+
+        .cross {
+            list-style-type: cross;
+        }
+
+        .paketid {
+            display: flex;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .pakett {
+            background: white;
+            border: 0.1rem solid #ddd;
+            flex: 1;
+            border-radius: 30px;
+            border-color: rgb(10, 228, 100);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pakettTekst {
+            font-weight: bolder;
+            line-height: 2rem;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.2rem;
+            line-height: 0.05rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+
+        }
+
+        .hinnaNumber {
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.2rem;
+            line-height: 1rem;
+            text-align: center;
+        }
+
+        .hinnaTekst {
+            font-weight: bolder;
+        }
+
+        .allaHindlusText {
+            font-size: 0.7rem;
+            color: rgb(124, 124, 124);
+            font-weight: bolder;
+            line-height: 2rem;
+        }
+
+        .kirjeldusTekst {
+            color: gray;
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+        }
+
+        .allaHindlusMärk {
+            width: 0.5rem;
+            border: 0.05rem solid rgb(124, 124, 124);
+            border-radius: 1rem;
+            margin: 0.1rem;
+            padding: 0.05rem;
+        }
+
+        .btn {
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            padding: 0.3em 6em;
+            border-radius: 0.2rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 color="white"><a href="../index.html">Tagasi avalehele</a></h2>
+    <div class="paketid">
+        <div class="pakett pakettTekst">
+            <h3>Starter</h3>
+            <p class="allaHindlusText">esimene aasta<a class="allaHindlusMärk">-50%</a></p>
+            <span class="hinnaNumber">3,67</span> <span class="hinnaTekst">€+KM/kuu</span>
+            <p class="allaHindlusText" style="line-height: 0.5rem;">norm. <a style="text-decoration: line-through;">
+                    7,34€+KM</a></p>
+            <ul>
+                <ol>
+                    <li>16 GB</li>
+                    <li>Privaatne postkast</li>
+                    <li class="cross">Oma IP aadress</li>
+                </ol>
+            </ul>
+            <p class="kirjeldusTekst">See pakett sobib hästi kui alustad oma esimese kodulehe tegemist ning soovid
+                ennast internetis nähtavaks teha.</p>
+            <button class="btn">Telli</button>
+            <p class="allaHindlusText"><b>30-päevane raha tagasi garantii</b></p>
+            <p class="allaHindlusText" style="line-height: 0.01em;">Kehtib ainult veebimajutuse baaspaketile</p>
+        </div>
+        <div class="pakett pakettTekst">
+            <h3>Business</h3>
+            <p class="allaHindlusText">esimene aasta<a class="allaHindlusMärk">-50%</a></p>
+            <span class="hinnaNumber">6,47</span> <span class="hinnaTekst">€+KM/kuu</span>
+            <p class="allaHindlusText" style="line-height: 0.5rem;">norm. <a style="text-decoration: line-through;">
+                    12,94€+KM</a></p>
+            <ol>
+                <ul>
+                    <li>24 GB</li>
+                    <li>Privaatne postkast</li>
+                    <li>Oma IP aadress</li>
+                </ul>
+            </ol>
+            <p class="kirjeldusTekst">Kindel valik kasvava e-äri püstihoidmiseks, suurem maht veebile ja e-postile ning
+                rohkem samaaegseid veebikülastajaid.</p>
+            <button class="btn"
+                style="border-color: rgb(53, 83, 219); background-color: rgb(53, 83, 219); color: white;">Telli</button>
+            <p class="allaHindlusText"><b>30-päevane raha tagasi garantii</b></p>
+            <p class="allaHindlusText" style="line-height: 0.01em;">Kehtib ainult veebimajutuse baaspaketile</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

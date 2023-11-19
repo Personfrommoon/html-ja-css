@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pildid ja pildiformaafid</title>
+    <style>
+        body {
+
+            background: url('pilt/taust.jpg') fixed;
+            color: white;
+        }
+
+        .tulbad {
+            display: flex;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .tulp {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        li {
+            padding: 1rem;
+            margin-bottom: 4rem;
+            color: black;
+            list-style-type: none;
+        }
+
+        li:hover {
+            background-color: white;
+        }
+
+        li:hover h2 {
+            color: black;
+        }
+
+        h2 {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 color="white"><a href="../index.html">Tagasi avalehele</a></h2>
+    <div class="tulbad">
+        <div class="tulp">
+            <ol>
+                <li>
+                    <h2>Mustvalge SVG</h2>
+                    <img src="pilt/SVG_4kB.svg" width="250" height="250">
+                    <p>694 b</p>
+                </li>
+                <li>
+                    <h2>Mustvalge PNG</h2>
+                    <img src="pilt/PNG_8kB.png" width="250" height="250">
+                    <p>8.4 kB</p>
+                </li>
+                <li>
+                    <h2>Mustvalge WEBP</h2>
+                    <img src="pilt/WEBP_18kB.webp" width="250" height="250">
+                    <p>17.9 kB</p>
+                </li>
+                <li>
+                    <h2>Mustvalge JPG</h2>
+                    <img src="pilt/JPG_22kB.jpg" width="250" height="250">
+                    <p>22.1 kB</p>
+                </li>
+            </ol>
+        </div>
+        <div class="tulp">
+            <ol>
+                <li>
+                    <h2>Kirju SVG</h2>
+                    <img src="pilt/V_SVG_4kB.svg" width="250" height="250">
+                    <p>3.6 kB</p>
+                </li>
+                <li>
+                    <h2>Kirju WEBP</h2>
+                    <img src="pilt/V_WEBP_39kB.webp" width="250" height="250">
+                    <p>39 kB</p>
+                </li>
+                <li>
+                    <h2>Kirju PNG</h2>
+                    <img src="pilt/V_PNG_41kB.png" width="250" height="250">
+                    <p>41.9 kB</p>
+                </li>
+                <li>
+                    <h2>Kirju JPG</h2>
+                    <img src="pilt/V_JPG_61kB.jpg" width="250" height="250">
+                    <p>61 kB</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
