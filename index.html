@@ -6,17 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kristofer Valk HTML, CSS</title>
     <style>
-        button {
-            width: 11em;
-            height: 3em;
-            font-size: 16px;
-            font-family: inherit;
-            position: relative;
-            margin: 3px;
-            background: white;
+        .tabel {
+            display: inline-block;
+            border-bottom: 3px solid;
+            padding-bottom: 5px;
+            font-size: 20px;
+            font-weight: bold;
         }
 
-        p {
+        .pilt {
+            width: 11em;
+            height: 4em;
+            position: relative;
+            background-color: white;
+            border: 0;
+        }
+
+        .tekst {
+            width: 11em;
+            height: 4em;
+            position: relative;
+            background-color: white;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .paigutamised {
+            width: 11em;
+            height: 4em;
+            position: relative;
+            background-color: white;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .tekstid {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100px;
+            border: solid;
+            padding: 10px;
+            padding-right: 55px;
+            padding-bottom: 0;
+            border-width: 5px;
+            background-color: white;
+        }
+
+        .pildid {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100px;
+            border: solid;
+            padding: 10px;
+            padding-right: 55px;
+            border-width: 5px;
+            background-color: white;
+
+        }
+
+        .paigutamine {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100px;
+            border: solid;
+            padding: 10px;
+            padding-right: 55px;
+            padding-bottom: 0;
+            border-width: 5px;
+            background-color: white;
+        }
+
+        .pealkiri {
             font-size: 40px;
             font-family: inherit;
             width: 700px;
@@ -24,13 +98,11 @@
             padding: 10px;
             border: 5px solid;
             margin: auto;
-            margin-top: 50px;
+            margin-top: 100px;
             text-align: center;
             background-color: white;
         }
-        .nupud {
-            background: white;
-        }
+
         * {
             margin: 0;
             padding: 0;
@@ -67,7 +139,7 @@
             z-index: 999;
             opacity: 0.5;
             animation-delay: -5s;
-            bottom: 10px;
+            bottom: 30px;
         }
 
         section .air.air3 {
@@ -75,7 +147,7 @@
             z-index: 998;
             opacity: 0.2;
             animation-delay: -2s;
-            bottom: 15px;
+            bottom: 40px;
         }
 
         section .air.air4 {
@@ -83,7 +155,7 @@
             z-index: 997;
             opacity: 0.7;
             animation-delay: -5s;
-            bottom: 20px;
+            bottom: 50px;
         }
 
         @keyframes wave {
@@ -115,15 +187,27 @@
         <div class='air air2'></div>
         <div class='air air3'></div>
         <div class='air air4'></div>
-        <div class="nupud">
-            <a href="tekstid/tekstid1.html"><button>Tekstid 1</button></a>
-            <a href="tekstid/tekstid2.html"><button>Tekstid 2</button></a>
-            <a href="tekstid/tekstid3.html"><button>Tekstid 3</button></a>
-            <a href="pildid/pildid.html"><button>Pildid ja pildiformaadid</button></a>
-            <a href="paigutamised/paigutamine-2.html"><button>Paigutamine 2</button></a>
-            <a href="paigutamised/paigutamine-3.html"><button>Paigutamine 3</button></a>
-        </div>
-        <p>HTML ja CSS ülesanded. Kristofer Valk</p>
+
+        <p class="pealkiri">HTML ja CSS ülesanded. Kristofer Valk</p>
+
+        <ul class="tekstid">
+            <p class="tabel">TEKSTID</p>
+            <a href="tekstid/tekstid1.html"><button class="tekst">Tekstid 1</button></a>
+            <a href="tekstid/tekstid2.html"><button class="tekst">Tekstid 2</button></a>
+            <a href="tekstid/tekstid3.html"><button class="tekst">Tekstid 3</button></a>
+        </ul>
+
+        <ul class="pildid">
+            <p class="tabel">PILDID</p>
+            <a href="pildid/pildid.html"><button class="pilt">Pildid ja pildiformaadid</button></a>
+        </ul>
+
+        <ul class="paigutamine">
+            <p class="tabel">PAIGUTAMISED</p>
+            <a href="paigutamised/paigutamine-1.html"><button class="paigutamised">Paigutamine 1</button></a>
+            <a href="paigutamised/paigutamine-2.html"><button class="paigutamised">Paigutamine 2</button></a>
+            <a href="paigutamised/paigutamine-3.html"><button class="paigutamised">Paigutamine 3</button></a>
+        </ul>
     </section>
 
 </body>
