@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paigutamine 4 - Flex ja semantilised elemendid + globaalsed parameetrid</title>
+    <style>
+        body {
+            font-family: sans-serif;
+
+        }
+
+        header {
+            background: coral;
+        }
+
+        main {
+            background: lightgreen;
+        }
+
+        article {
+            background: lightsalmon;
+        }
+
+        aside {
+            background: lightpink;
+        }
+
+        nav {
+            background: yellow;
+        }
+
+        form,
+        footer,
+        header,
+        main,
+        article,
+        aside,
+        nav {
+            padding: 1rem;
+            border-radius: 30px;
+        }
+
+        footer {
+            background: navy;
+            color: aqua;
+            border-radius: 50px;
+        }
+
+        h1+p {
+            color: red;
+            font-size: 1.5rem;
+        }
+        h1 ~ a {
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+        h1 ~ a:hover {
+            border-bottom: 5px dotted purple;
+        }
+        section > p {
+            color: navy;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        summary, button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>
+            logo, otsing, autori nimi / bränd / slogan
+        </p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">Item 1</a></li>
+            <li><a href="">Item 2</a></li>
+            <li><a href="">Item 3</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Paigutamine 4</h1>
+        <p>Flex ja semantilised elemendid + globaalsed parameetrid</p>
+        <a href="">Link</a>
+        <article>
+            <section>
+                <h2>Sektsioon 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, iusto. Maxime ut tempora repellendus
+                    possimus. Similique, commodi culpa dignissimos perspiciatis at aperiam cumque voluptatibus maiores
+                    provident illum reprehenderit veniam eaque.
+                </p>
+            </section>
+        </article>
+
+        <article>
+            <section>
+                <h2>Sektsioon 2</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quia et accusamus consequuntur
+                    eveniet recusandae nobis labore, vero adipisci sed molestias nihil fugit, ipsum dignissimos suscipit
+                    quasi dicta alias dolor.
+                </p>
+            </section>
+        </article>
+        <article contenteditable="false" draggable="true">
+            <section>
+                <h2 dir="rtl">Sektsioon 3</h2>
+                <p autocapitalize="characters">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, accusantium eaque at qui vitae
+                    recusandae voluptatibus quis, officiis quasi impedit corrupti id dolore assumenda possimus. Magnam
+                    veritatis nihil aliquam exercitationem.
+                </p>
+            </section>
+            <section>
+                <details inert>
+                    <summary><h2>Vorm</h2></summary>
+                    <button popovertarget="my-popover">Open</button>
+                </details>
+                <h2>Vorm</h2>
+                <form action="" popover id="my-popover">
+                    <input type="text" name="" id="" enterkeyhint="enter" spellcheck="true" placeholder="tekstid"> 
+                    <input type="email">
+                    <input type="email">
+                    <input type="email">
+                    <input type="password" autofocus> 
+                    <input type="number" name="" id="">
+                    <input type="tel" name="" id="">
+                    <input type="url" name="" id="">
+                    <button>Button</button>
+                </form>
+                <a accesskey="a" href="http://neeger.ee">lahe Website</a>
+            </section>
+        </article>
+        <aside>
+            <h3>Sidebar</h3>
+        </aside>
+    </main>
+    <footer>
+        <p>Kontaktandmed, kiirlingid, logo jt</p>
+    </footer>
+</body>
+
+</html>
