@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pildid 3: SVG maja</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes rotateSun {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #sun {
+            animation: rotateSun 10s linear infinite;
+            transform-origin: center center;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 50px;
+        }
+
+        /* Kujundus stiilid */
+        svg {
+            display: block;
+            margin: 50px auto;
+        }
+
+        .raam {
+            width: 900px;
+            height: 900px;
+            margin: 0 auto 5rem auto;
+            background: url(pilt/koordinaadid.png) bottom left;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .raam svg {
+            margin: 0 auto;
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1>SVG </h1>
+    <div class="raam">
+        <svg width="800px" height="800px" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+            <defs>
+                <linearGradient id="muru" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgb(11, 87, 40);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(10, 165, 62);stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <defs>
+                <linearGradient id="taevas" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(75, 161, 237);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(83, 39, 184);stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <rect x="2" y="2" height="100%" width="800" fill="url(#taevas)"></rect>
+            <path id="path" d=" M 100 450 A 200 300 0 0 1 650 500 A 200 200 0 0 1 400 450" fill="transparent" />
+            <image xlink:href="pilt/paike.png" width="200" height="200">
+                <animateMotion dur="10s" repeatCount="indefinite">
+                    <mpath xlink:href="#path" />
+                </animateMotion>
+            </image>
+            <rect x="2" y="450" height="100%" width="800" fill="url(#muru)"></rect>
+            <path d="M400 800 L420 750 L555 700 L555 600" stroke="black" stroke-width="40" fill="transparent"
+                stroke-linejoin="round" stroke-linecap="square" />
+
+            <!-- katus -->
+            <!-- points="x,y x,y ..."  -->
+            <rect x="420" y="300" height="80" width="40" fill="slategray"></rect>
+            <polyline points="380,400 500,300 620,400" fill="silver"></polyline>
+
+            <!-- sein -->
+            <rect x="400" y="400" height="200" width="200" fill="saddlebrown"></rect>
+            <rect x="400" y="600" height="5" width="200" fill="black"></rect>
+
+            <!-- uks -->
+            <rect x="525" y="495" width="60" height="105" fill="peru"></rect>
+            <rect x="530" y="500" width="50" height="100" fill="silver"></rect>
+
+            <!-- aken -->
+            <rect x="445" y="495" height="70" width="50" fill="peru"></rect>
+            <rect x="450" y="500" height="60" width="40" fill="powderblue"></rect>
+
+            <!-- uksenupp -->
+            <circle cx="570" cy="555" r="5" fill="gold"></circle>
+
+        </svg>
+    </div>
+</body>
+
+</html>
