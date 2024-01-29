@@ -20,9 +20,9 @@
         <div class="progress-bar bg-success" style="width: 33%">33%</div>
     </div>
     <h1 class="text-center mb-4">Sisesta andmed</h1>
+    <form action="http://localhost:8080">
     <div class="container custom-container d-flex flex-row gap-5">
-
-        <form>
+        <div>
             <div class="mb-3">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Kasutajanimi"
                     required>
@@ -43,7 +43,7 @@
 
             <div class="row mb-3">
                 <div class="col-6">
-                    <select id="countryCodeSelect" class="form-select">
+                    <select id="countryCodeSelect" name="countrycode" class="form-select" required>
                         <option value="">Select Country Code</option>
                         <option value="1">United States (+1)</option>
                         <option value="33">France (+33)</option>
@@ -55,7 +55,7 @@
 
                 <div class="col-6">
 
-                    <input type="tel" class="form-control" id="phoneNumberInput" name="phoneNumber"
+                    <input type="number" class="form-control" id="phoneNumberInput" name="phoneNumber"
                         placeholder="Telefoni number">
                 </div>
             </div>
@@ -66,18 +66,18 @@
 
             <div class="unlocked-field">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="additionalField1" placeholder="Firma nimi">
+                    <input type="text" class="form-control" id="additionalField1" name="firmanimi" placeholder="Firma nimi">
                 </div>
                 <div class="mb-3">
-                    <input type="number" class="form-control" id="additionalField2" placeholder="Firma reg nr">
+                    <input type="number" class="form-control" id="additionalField2" name="regnr" placeholder="Firma reg nr">
                 </div>
             </div>
-        </form>
+        </div>
         <div class="container w-25">
             <div class="row">
               <div class="col-md-12">
                 <h2>Kokkuvõte tellimusest</h2>
-                <table class="table">
+                <table class="table" required>
                   <thead>
                     <tr>
                       <th>Domeen</th>
@@ -100,11 +100,12 @@
                     </tr>
                   </tfoot>
                 </table>
-                <a href="vaade7.html" class="btn btn-success">Kinnita tellimus</a>
+                <button action="vaade7.html" class="btn btn-success">Kinnita tellimus</button>
               </div>
             </div>
           </div>
     </div>
+</form>
     <div class="alert alert-danger" role="alert" id="domain-alert">
         Viga sisestatud infos!
     </div>

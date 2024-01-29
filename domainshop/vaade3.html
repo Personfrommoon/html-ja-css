@@ -25,16 +25,16 @@
         <div class="progress-bar bg-success" style="width: 33%">33%</div>
     </div>
     <h1>Vali domeen</h1>
-    <form class="container rounded-lg m-auto d-flex flex-row align-items-center justify-content-center" required>
+    <form action="http://localhost:8080" name="domeen" required>
         <div class="mb-3">
             <div class="input-group d-flex flex-row justify-content-center align-items-center">
                 <p class="m-auto">http://</p>
-                <input type="text" class="form-control m-auto" id="domain-name" placeholder="Domeeni nimi">
-                <select class="form-select m-auto" aria-label="Domain type">
+                <input type="text" class="form-control m-auto" id="domain-name" placeholder="Domeeni nimi" name="domeen">
+                <select class="form-select m-auto" aria-label="Domain type" name="ending">
                     <option selected>vali domeeni lõpp</option>
-                    <option value="1">.ee (5.00€)</option>
-                    <option value="2">.eu (10.00€)</option>
-                    <option value="3">.com (15.00€)</option>
+                    <option value=".ee">.ee (5.00€)</option>
+                    <option value=".eu">.eu (10.00€)</option>
+                    <option value=".com">.com (15.00€)</option>
                 </select>
             </div>
         </div>
@@ -46,8 +46,8 @@
         Korras! Vali veel endale domeen või mine edasi.
     </div>
     <div class="d-flex justify-content-end mb-3" style="height: 40px; width: 70%;">
-        <a href="vaade4.html"><button onclick="" type="button" class="btn btn-primary m-auto btn-lg">Mine edasi
-            </button></a>
+        <button onclick="" type="button" action="vaade4.html" class="btn btn-primary m-auto btn-lg">Mine edasi
+        </button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-GLhlTQ8iNl7Nl6rZ+YdLczk+AJhjPDAxH8dob6H7uJY2zUKtg7ByEAs+g/vjz3T"

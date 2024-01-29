@@ -15,22 +15,22 @@
     <div class="progress-bar bg-success" style="width: 0%">0%</div>
   </div>
   <h1>Vali domeen</h1>
-  <form action="vaade2.html" method="get" onkeydown="return event.key != 'Enter';"
+  <form action="http://localhost:8080" 
     class="container rounded-lg m-auto d-flex flex-row align-items-center justify-content-center " required>
     <div class="mb-3">
       <div class="input-group d-flex flex-row justify-content-center align-items-center">
         <p class="m-auto">http://</p>
-        <input type="text" class="form-control m-auto" id="domain-name" placeholder="Domeeni nimi">
-        <select class="form-select m-auto" aria-label="Domain type">
+        <input type="text" class="form-control m-auto" id="domain-name" name="domeen" placeholder="Domeeni nimi">
+        <select class="form-select m-auto" aria-label="Domain type" name="ending">
           <option selected>vali domeeni lõpp</option>
-          <option value="1">.ee (5.00€)</option>
-          <option value="2">.eu (10.00€)</option>
-          <option value="3">.com (15.00€)</option>
+          <option value=".ee">.ee (5.00€)</option>
+          <option value=".eu">.eu (10.00€)</option>
+          <option value=".com">.com (15.00€)</option>
         </select>
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-success mb-3">Kontrolli</button>
+      <button type="submit" action="vaade2.html" class="btn btn-success mb-3">Kontrolli</button>
     </div>
   </form>
 
