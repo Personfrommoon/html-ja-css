@@ -129,6 +129,18 @@
             }
         });
 
+        const queryString = window.location.search;
+        console.log(queryString);
+
+        let [path, query] = queryString.split("?");
+        let paramsArray = query.split("?")
+        let paramsObject = {}
+        for (let param of paramsArray) {
+            let [key, value] = param.split("=")
+            paramsObject[key] = value;
+        }
+
+        console.log(paramsObject)
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -140,21 +152,22 @@
             const phoneNumberInput = document.getElementById('phoneNumberInput').value;
 
 
+
             const formData = {
                 Name: Name,
                 email: email,
                 password: password,
                 username: username,
                 countryCodeSelect: countryCodeSelect,
-                phoneNumberInput: phoneNumberInput
+                phoneNumberInput: phoneNumberInput,
             };
 
             saveFormData(formData);
 
             fetch('http://localhost:8080/vaade7.html', {
-            method: 'POST', // Specify the HTTP method
-            body: localStorage.getItem('formData')
-        })
+                method: 'POST', // Specify the HTTP method
+                body: localStorage.getItem('formData')
+            })
         });
 
         function saveFormData(formData) {
