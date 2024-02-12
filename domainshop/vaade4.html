@@ -105,7 +105,7 @@
                                 </tr>
                             </tfoot>
                         </table>
-                        <button id="submit" class="btn btn-success">Kinnita tellimus</button>
+                        <button type="submit" id="submit" class="btn btn-success">Kinnita tellimus</button>
                     </div>
                 </div>
             </div>
@@ -129,58 +129,71 @@
             }
         });
 
-        const queryString = window.location.search;
-        console.log(queryString);
+        document.addEventListener('DOMContentLoaded', function () {
+            const queryString = window.location.search;
+            console.log(queryString);
 
-        let [path, query] = queryString.split("?");
-        let paramsArray = query.split("?")
-        let paramsObject = {}
-        for (let param of paramsArray) {
-            let [key, value] = param.split("=")
-            paramsObject[key] = value;
-        }
+            let [, query] = queryString.split("?");
+            let paramsArray = query.split("&");
+            let paramsObject = {};
+            for (let param of paramsArray) {
+                let [key, value] = param.split("=");
+                paramsObject[key] = value;
+            }
 
-        console.log(paramsObject)
+            console.log(paramsObject);
+
+            // Check if "domeen" and "ending" are present in the URL parameters
+            const domeenFromParams = paramsObject['domeen'];
+            const endingFromParams = paramsObject['ending'];
+
+            // If present in the URL parameters, store them in localStorage
+            if (domeenFromParams && endingFromParams) {
+                localStorage.setItem('domeen', domeenFromParams);
+                localStorage.setItem('ending', endingFromParams);
+            }
+        });
+
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const Name = document.getElementById('Name').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const username = document.getElementById('username').value;
-            const countryCodeSelect = document.getElementById('countryCodeSelect').value;
-            const phoneNumberInput = document.getElementById('phoneNumberInput').value;
-
-
+            // Retrieve "domeen" and "ending" values from localStorage
+            const domeen = localStorage.getItem('domeen');
+            const ending = localStorage.getItem('ending');
 
             const formData = {
-                Name: Name,
-                email: email,
-                password: password,
-                username: username,
-                countryCodeSelect: countryCodeSelect,
-                phoneNumberInput: phoneNumberInput,
+                domeen: domeen,
+                ending: ending,
+                Name: document.getElementById('Name').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                username: document.getElementById('username').value,
+                countryCodeSelect: document.getElementById('countryCodeSelect').value,
+                phoneNumberInput: document.getElementById('phoneNumberInput').value,
             };
 
             saveFormData(formData);
 
             fetch('http://localhost:8080/vaade7.html', {
-                method: 'POST', // Specify the HTTP method
-                body: localStorage.getItem('formData')
-            })
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            
+            }).then(() => {window.location.href = "vaade7.html";});
+
         });
 
         function saveFormData(formData) {
-            const storedFormData = JSON.parse(localStorage.getItem('formData')) || {};
+            let storedFormData = JSON.parse(localStorage.getItem('formData')) || {};
 
-            Object.entries(formData).forEach(([key, value]) => {
-                storedFormData[key] = value;
-            });
+            // Merge the new formData with the existing one
+            storedFormData = { ...storedFormData, ...formData };
 
+            // Save the merged formData back to localStorage
             localStorage.setItem('formData', JSON.stringify(storedFormData));
         }
-
-
 
     </script>
 </body>
